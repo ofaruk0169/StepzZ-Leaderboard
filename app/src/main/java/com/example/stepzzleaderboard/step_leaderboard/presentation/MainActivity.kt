@@ -1,4 +1,4 @@
-package com.example.stepzzleaderboard
+package com.example.stepzzleaderboard.step_leaderboard.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
