@@ -14,7 +14,7 @@ data class UserEntity(
     val userTextColor: Int,
     val userName: String,
     val profilePicture: String,
-    val dailyStepzZ: Int,
+    val dailyStepZ: Int,
     val friendRank: Int,
     val isFriend: Boolean,
     val isCurrentUser: Boolean

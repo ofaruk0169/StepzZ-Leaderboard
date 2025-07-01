@@ -7,6 +7,7 @@ import com.example.stepzzleaderboard.core.domain.model.StepsEntity
 
 @Dao
 interface StepsDao {
+
     @Insert
     suspend fun recordSteps(steps: StepsEntity)
 
@@ -18,4 +19,5 @@ interface StepsDao {
 
     @Query("SELECT SUM(count) FROM steps WHERE userId = :userId AND date = :date")
     suspend fun getTotalStepsForDate(userId: Int, date: Long): Int?
+
 }
