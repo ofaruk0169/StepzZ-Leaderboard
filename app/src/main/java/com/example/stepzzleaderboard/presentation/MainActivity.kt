@@ -1,4 +1,4 @@
-package com.example.stepzzleaderboard.core
+package com.example.stepzzleaderboard.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -38,10 +38,11 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
+/*
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     StepzZLeaderboardTheme {
         Greeting("Android")
     }
-}
+}*/
