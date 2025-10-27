@@ -1,9 +1,7 @@
 package com.example.stepzzleaderboard.domain.model
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.stepzzleaderboard.ui.theme.*
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
