@@ -1,9 +1,9 @@
-package com.example.stepzzleaderboard.data.data_source
+package com.example.stepzzleaderboard.feature_steps.data.data_source
 
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.stepzzleaderboard.domain.model.StepEntry
+import com.example.stepzzleaderboard.feature_steps.data.domain.model.StepEntry
 import kotlinx.coroutines.flow.Flow
 
 @Dao

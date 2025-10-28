@@ -1,8 +1,8 @@
-package com.example.stepzzleaderboard.data.data_source
+package com.example.stepzzleaderboard.feature_steps.data.data_source
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.stepzzleaderboard.domain.model.StepEntry
+import com.example.stepzzleaderboard.feature_steps.data.domain.model.StepEntry
 
 @Database(
     entities = [StepEntry::class],
