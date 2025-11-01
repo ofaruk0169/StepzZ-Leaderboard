@@ -72,4 +72,34 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp("androidx.room:room-compiler:2.6.1")
+
+    //Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.50")
+    ksp("com.google.dagger:hilt-android-compiler:2.50")
+    ksp("com.google.dagger:hilt-compiler:2.50")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    //local unit tests (might need to change this and instrumentation below)
+    testImplementation ("androidx.test:core:1.6.1")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
+    testImplementation ("com.google.truth:truth:1.1.3")
+    testImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
+    testImplementation("io.mockk:mockk:1.13.12")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.6.8")
+
+
+    //Instrumentation tests
+    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.37")
+    kspAndroidTest ("com.google.dagger:hilt-android-compiler:2.50")
+    androidTestImplementation ("junit:junit:4.13.2")
+    androidTestImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
+    androidTestImplementation ("androidx.arch.core:core-testing:2.2.0")
+    androidTestImplementation ("com.google.truth:truth:1.1.3")
+    androidTestImplementation ("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation ("androidx.test:core-ktx:1.6.1")
+    androidTestImplementation ("com.squareup.okhttp3:mockwebserver:4.9.1")
+    androidTestImplementation ("io.mockk:mockk-android:1.13.12")
+    androidTestImplementation ("androidx.test:runner:1.6.1")
 }
