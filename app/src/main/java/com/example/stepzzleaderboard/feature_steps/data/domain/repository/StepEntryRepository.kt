@@ -8,7 +8,8 @@ interface StepEntryRepository {
 
     suspend fun upsertStep(step: StepEntry)
 
-    suspend fun getOldestSteps(): Flow<List<StepEntry>>
+    suspend fun getMostRecentStep(id: Int): StepEntry?
 
-    suspend fun getMostRecentSteps(): Flow<List<StepEntry>>
+    fun getStepsHistory(): Flow<List<StepEntry>>
+
 }

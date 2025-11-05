@@ -10,7 +10,7 @@ import java.util.Locale
 @Entity()
 data class StepEntry(
     val dailyStepCounter: Int,
-    val currentDate: String = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date()),
+    val stepDate: String = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(Date()),
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
 )
