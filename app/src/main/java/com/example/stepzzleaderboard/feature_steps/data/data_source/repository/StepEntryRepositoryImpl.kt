@@ -12,12 +12,12 @@ class StepEntryRepositoryImpl(
         dao.upsertStep(step)
     }
 
-    override suspend fun getOldestSteps(): Flow<List<StepEntry>> {
-        return dao.getStepEntryByDate()
+    override suspend fun getMostRecentStep(id: Int): StepEntry? {
+        return dao.getMostRecentStep(id)
     }
 
-    override suspend fun getMostRecentSteps(): Flow<List<StepEntry>> {
-        return dao.getLatestStep()
+    override fun getStepsHistory(): Flow<List<StepEntry>> {
+        return dao.getStepsHistory()
     }
 }
 

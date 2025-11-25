@@ -12,10 +12,10 @@ interface StepEntryDao {
     @Upsert
     suspend fun upsertStep(steps: StepEntry)
 
-    @Query("SELECT * FROM StepEntry ORDER BY currentDate DESC LIMIT 1")
-    fun getLatestStep(): Flow<List<StepEntry>>
+    @Query("SELECT * FROM StepEntry WHERE id = :id")
+    suspend fun getMostRecentStep(id: Int): StepEntry?
 
-    @Query("SELECT * FROM StepEntry ORDER BY currentDate DESC")
-    fun getStepEntryByDate(): Flow<List<StepEntry>>
+    @Query("SELECT * FROM StepEntry ORDER BY stepDate DESC")
+    fun getStepsHistory(): Flow<List<StepEntry>>
 
 }
