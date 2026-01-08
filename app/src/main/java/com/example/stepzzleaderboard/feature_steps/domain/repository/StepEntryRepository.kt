@@ -1,6 +1,6 @@
-package com.example.stepzzleaderboard.feature_steps.data.domain.repository
+package com.example.stepzzleaderboard.feature_steps.domain.repository
 
-import com.example.stepzzleaderboard.feature_steps.data.domain.model.StepEntry
+import com.example.stepzzleaderboard.feature_steps.domain.model.StepEntry
 import kotlinx.coroutines.flow.Flow
 
 

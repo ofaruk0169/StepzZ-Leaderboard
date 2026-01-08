@@ -1,10 +1,9 @@
-package com.example.stepzzleaderboard.feature_steps.data.domain.use_case
+package com.example.stepzzleaderboard.feature_steps.domain.use_case
 
-import androidx.room.Index
-import com.example.stepzzleaderboard.feature_steps.data.domain.model.StepEntry
-import com.example.stepzzleaderboard.feature_steps.data.domain.repository.StepEntryRepository
-import com.example.stepzzleaderboard.feature_steps.data.domain.util.OrderType
-import com.example.stepzzleaderboard.feature_steps.data.domain.util.StepOrder
+import com.example.stepzzleaderboard.feature_steps.domain.model.StepEntry
+import com.example.stepzzleaderboard.feature_steps.domain.repository.StepEntryRepository
+import com.example.stepzzleaderboard.feature_steps.domain.util.OrderType
+import com.example.stepzzleaderboard.feature_steps.domain.util.StepOrder
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

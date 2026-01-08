@@ -1,4 +1,4 @@
-package com.example.stepzzleaderboard.feature_steps.data.domain.model
+package com.example.stepzzleaderboard.feature_steps.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
