@@ -41,6 +41,4 @@ object AppModule {
             updateDailyStep = UpdateDailyStep(repository)
         )
     }
-
-
 }
