@@ -14,4 +14,5 @@ class LeaderboardViewModel @Inject constructor(
     private val _state = mutableStateOf(LeaderboardState())
     val state: State<LeaderboardState> = _state
 
+
 }
