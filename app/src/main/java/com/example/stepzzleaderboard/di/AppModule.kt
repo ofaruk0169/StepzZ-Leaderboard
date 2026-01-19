@@ -1,6 +1,9 @@
 package com.example.stepzzleaderboard.di
 
 import android.app.Application
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
 import com.example.stepzzleaderboard.feature_steps.data.data_source.StepZDatabase
 import com.example.stepzzleaderboard.feature_steps.data.repository.StepEntryRepositoryImpl
@@ -14,6 +17,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
+import androidx.datastore.preferences.core.Preferences
+
+private val Context.dataStore by preferencesDataStore(name = "user_preferences")
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -41,4 +47,16 @@ object AppModule {
             updateDailyStep = UpdateDailyStep(repository)
         )
     }
+    @Provides
+    @Singleton
+    fun provideDataStore(app: Application): DataStore<Preferences> {
+        return app.dataStore
+    }
+
+    @Provides
+    @Singleton
+    fun provideDataStoreRepository(dataStore: DataStore<Preferences>): UserPreferencesRepository   {
+        return UserPreferencesRepositoryImpl(dataStore)
+    }
+
 }
