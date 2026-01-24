@@ -1,4 +1,4 @@
-package com.example.stepzzleaderboard.feature_steps.presentation.personal_steps
+package com.example.stepzzleaderboard.feature_profile.presentation.personal_steps
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

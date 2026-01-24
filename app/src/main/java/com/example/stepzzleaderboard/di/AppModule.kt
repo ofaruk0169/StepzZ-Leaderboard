@@ -18,6 +18,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 import androidx.datastore.preferences.core.Preferences
+import com.example.stepzzleaderboard.feature_profile.data.repository.UserPreferencesRepositoryImpl
+import com.example.stepzzleaderboard.feature_profile.domain.repository.UserPreferencesRepository
 
 private val Context.dataStore by preferencesDataStore(name = "user_preferences")
 
@@ -47,6 +49,7 @@ object AppModule {
             updateDailyStep = UpdateDailyStep(repository)
         )
     }
+
     @Provides
     @Singleton
     fun provideDataStore(app: Application): DataStore<Preferences> {
@@ -55,7 +58,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideDataStoreRepository(dataStore: DataStore<Preferences>): UserPreferencesRepository   {
+    fun provideUserPreferencesRepository (dataStore: DataStore<Preferences>): UserPreferencesRepository {
         return UserPreferencesRepositoryImpl(dataStore)
     }
 

@@ -1,0 +1,4 @@
+package com.example.stepzzleaderboard.feature_profile.presentation.personal_steps
+
+class PersonalStepsState {
+}
