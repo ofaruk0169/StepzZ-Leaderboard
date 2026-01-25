@@ -20,6 +20,9 @@ import javax.inject.Singleton
 import androidx.datastore.preferences.core.Preferences
 import com.example.stepzzleaderboard.feature_profile.data.repository.UserPreferencesRepositoryImpl
 import com.example.stepzzleaderboard.feature_profile.domain.repository.UserPreferencesRepository
+import com.example.stepzzleaderboard.feature_profile.domain.use_case.GetUsername
+import com.example.stepzzleaderboard.feature_profile.domain.use_case.SetUsername
+import com.example.stepzzleaderboard.feature_profile.domain.use_case.UserPreferencesUseCases
 
 private val Context.dataStore by preferencesDataStore(name = "user_preferences")
 
@@ -62,4 +65,12 @@ object AppModule {
         return UserPreferencesRepositoryImpl(dataStore)
     }
 
+    @Provides
+    @Singleton
+    fun provideUserPreferencesRepositoryUseCases(repository: UserPreferencesRepository): UserPreferencesUseCases {
+        return UserPreferencesUseCases(
+            getUsername = GetUsername(repository),
+            setUsername = SetUsername(repository)
+        )
+    }
 }
