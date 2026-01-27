@@ -22,7 +22,7 @@ import com.example.stepzzleaderboard.feature_profile.data.repository.UserPrefere
 import com.example.stepzzleaderboard.feature_profile.domain.repository.UserPreferencesRepository
 import com.example.stepzzleaderboard.feature_profile.domain.use_case.GetUsername
 import com.example.stepzzleaderboard.feature_profile.domain.use_case.SetUsername
-import com.example.stepzzleaderboard.feature_profile.domain.use_case.UserPreferencesUseCases
+import com.example.stepzzleaderboard.feature_profile.domain.use_case.PreferencesUseCases
 
 private val Context.dataStore by preferencesDataStore(name = "user_preferences")
 
@@ -67,8 +67,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideUserPreferencesRepositoryUseCases(repository: UserPreferencesRepository): UserPreferencesUseCases {
-        return UserPreferencesUseCases(
+    fun provideUserPreferencesUseCases(repository: UserPreferencesRepository): PreferencesUseCases {
+        return PreferencesUseCases(
             getUsername = GetUsername(repository),
             setUsername = SetUsername(repository)
         )
