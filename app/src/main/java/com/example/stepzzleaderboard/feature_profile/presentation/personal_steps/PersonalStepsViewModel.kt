@@ -9,6 +9,7 @@ import com.example.stepzzleaderboard.feature_profile.domain.use_case.GetUsername
 import com.example.stepzzleaderboard.feature_profile.domain.use_case.PreferencesUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,8 +18,8 @@ class PersonalStepsViewModel @Inject constructor(
     saveStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _state = mutableStateOf(PersonalStepsState())
-    val state: State<PersonalStepsState> = _state
+    private val _username = mutableStateOf(PersonalStepsState())
+    val username: State<PersonalStepsState> = _username
 
     private var getPreferencesJob: Job? = null
 
@@ -27,7 +28,9 @@ class PersonalStepsViewModel @Inject constructor(
     }
 
     private fun getUserName() {
-        preferencesUseCases.getUsername.invoke()
+        viewModelScope.launch {
+            val username = preferencesUseCases.getUsername()
+            _username.value = _username.value.copy(username = username)
+        }
     }
-
 }
