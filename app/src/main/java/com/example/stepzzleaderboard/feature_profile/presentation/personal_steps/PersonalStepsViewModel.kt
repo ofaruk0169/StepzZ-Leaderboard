@@ -21,10 +21,9 @@ class PersonalStepsViewModel @Inject constructor(
     private val _username = mutableStateOf(PersonalStepsState())
     val username: State<PersonalStepsState> = _username
 
-    private var getPreferencesJob: Job? = null
-
     init {
         getUserName()
+
     }
 
     private fun getUserName() {
@@ -33,4 +32,12 @@ class PersonalStepsViewModel @Inject constructor(
             _username.value = _username.value.copy(username = username)
         }
     }
+
+    fun setUserName(userInput: String) {
+        viewModelScope.launch {
+            _username.value = _username.value.copy(username = userInput)
+            preferencesUseCases.setUsername(userInput)
+        }
+    }
+
 }
