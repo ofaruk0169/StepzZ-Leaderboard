@@ -80,4 +80,7 @@ dependencies {
     // Preferences DataStore (SharedPreferences like APIs)
     implementation("androidx.datastore:datastore-preferences:1.2.0")
 
+    //navigation component
+    implementation("androidx.navigation:navigation-compose:2.9.7")
+
 }
