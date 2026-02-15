@@ -77,6 +77,10 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    implementation("androidx.hilt:hilt-lifecycle-viewmodel-compose:1.3.0")
+
+
+
     // Preferences DataStore (SharedPreferences like APIs)
     implementation("androidx.datastore:datastore-preferences:1.2.0")
 

@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.stepzzleaderboard.core.ui.theme.StepzZLeaderboardTheme
+import com.example.stepzzleaderboard.feature_profile.presentation.personal_steps.PersonalStepsScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +20,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             StepzZLeaderboardTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+/*                    Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
+                    )*/
+
+                    PersonalStepsScreen(
                     )
+
+
                 }
             }
         }
