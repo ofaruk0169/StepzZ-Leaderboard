@@ -12,36 +12,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.stepzzleaderboard.core.ui.theme.StepzZLeaderboardTheme
 import com.example.stepzzleaderboard.feature_profile.presentation.personal_steps.PersonalStepsScreen
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            StepzZLeaderboardTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-/*                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )*/
-
-                    PersonalStepsScreen(
-                    )
-
-
-                }
-            }
+                    PersonalStepsScreen()
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
 
 /*
 @Preview(showBackground = true)
