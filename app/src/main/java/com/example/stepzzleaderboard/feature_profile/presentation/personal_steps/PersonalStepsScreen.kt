@@ -14,12 +14,15 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.hilt.navigation.compose.hiltViewModel
 
@@ -29,8 +32,7 @@ fun PersonalStepsScreen(
     viewModel: PersonalStepsViewModel = hiltViewModel()
 
 ) {
-    val userName = viewModel.username.value
-
+    val usernameState = viewModel.username.value
     val scope = rememberCoroutineScope()
 
     Scaffold(
@@ -43,7 +45,21 @@ fun PersonalStepsScreen(
                 .background(color = Color(0xFF6C63FF))
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp)
-        ) {  }
+        ) {
+            TextField(
+                value = usernameState.username,
+                onValueChange = { newValue ->
+                    viewModel.setUserName(newValue)
+                },
+                label = { Text("your username") },
+                textStyle = TextStyle(fontSize = 20.sp),
+                modifier = Modifier
+            )
+
+        }
+
+
+
     }
 
 
